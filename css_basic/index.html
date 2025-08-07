@@ -1,148 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Me | Atanda Nafiu</title>
+  <link rel="stylesheet" href="base.css" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
-   <header>
+<body class="works_on_smartphone">
+  <header>
     <nav>
-        <ul>
-            <li><a href="/html_basic/tweets.html">About</a></li>
-        </ul>
+      <ul>
+        <li><a href="/html_basic/index.html">Home</a></li>
+        <li><a href="/html_basic/tweets.html">Tweets</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
     </nav>
-</header>
-<main>
-    <article>
-        <!-- Your content goes here -->
-        <p>This is your main content: texts, images, tweets, etc.</p>
-        <a href="/html_basic/index.html"><img src="https://i.ibb.co/gTDZZT8/ALX-Logo-07.png" alt="Alx logo-07"></a>
-    
-    <h1>Level 1</h1>
-    <p>This Level 1</p>
-    <h2>Level 2</h2>
-    <p>This is Level 2</p>
-    <h2>Level 3</h2>
-    <p>This is Level 3</p>
-    <h3>Level 4</h3>
-    <p>This is Level 4</p>
+  </header>
 
-    <a href="/html_basic/tweets.html" target="_blank">View Tweet</a>
+  <main>
+    <section class="intro">
+      <h1>Hi, I'm Atanda Nafiu 👋</h1>
+      <p>
+        I'm a passionate web developer with a love for clean code, responsive design,
+        and building solutions that make life easier. I'm currently on the ALX program, honing
+        my skills and diving deep into HTML, CSS, and JavaScript.
+      </p>
+      <img src="https://i.ibb.co/gTDZZT8/ALX-Logo-07.png" alt="ALX Logo" width="200" />
+    </section>
 
-   <table>
-    <thead>
-        <tr>
+    <section class="about">
+      <h2>About Me</h2>
+      <p>
+        I enjoy solving problems through code and collaborating with others to bring
+        ideas to life. Whether it's creating interactive front-end experiences or optimizing
+        back-end performance, I’m always excited to learn and grow.
+      </p>
+
+      <h3>Skills</h3>
+      <ul>
+        <li>HTML5, CSS3, JavaScript</li>
+        <li>Git & GitHub</li>
+        <li>Responsive Web Design</li>
+        <li>Debugging & Browser DevTools</li>
+      </ul>
+
+      <h3>Fun Facts</h3>
+      <ul>
+        <li>I love coffee and code marathons ☕</li>
+        <li>Favorite editor: VS Code</li>
+        <li>I build things for the web and break them to learn</li>
+      </ul>
+    </section>
+
+    <section class="table-section">
+      <h2>My Network</h2>
+      <table>
+        <caption>Sample Connections</caption>
+        <thead>
+          <tr>
             <th>Name</th>
             <th>Age</th>
             <th>Country</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
             <td>John</td>
             <td>25</td>
             <td>USA</td>
-        </tr>
-        <tr>
+          </tr>
+          <tr>
             <td>Emily</td>
             <td>28</td>
             <td>Canada</td>
-        </tr>
-        <tr>
+          </tr>
+          <tr>
             <td>Micheal</td>
             <td>32</td>
             <td>Australia</td>
-        </tr>
-        <tr>
+          </tr>
+          <tr>
             <td>Sophia</td>
             <td>21</td>
             <td>UK</td>
-        </tr>
-    </tbody>
-</table>
+          </tr>
+        </tbody>
+      </table>
+    </section>
 
-    </article>
-    <aside>
-        <p>placeholder to add comment thread later</p>
-    </aside>
-</main>
-<footer><p>Made by Atanda Nafiu - <a href="https://github.com/0xatanda" target="_blank">here</a>.</p></footer>
+    <section class="contact" id="contact">
+      <h2>Contact Me</h2>
+      <p>Feel free to reach out to me for collaboration or just to say hi!</p>
+      <form action="#" method="post">
+        <label for="name">Name:</label><br />
+        <input type="text" id="name" name="name" required /><br />
 
+        <label for="email">Email:</label><br />
+        <input type="email" id="email" name="email" required /><br />
 
+        <label for="message">Message:</label><br />
+        <textarea id="message" name="message" rows="5" required></textarea><br />
 
-    
+        <button type="submit">Send</button>
+      </form>
+    </section>
+  </main>
 
-</body>
-</html><!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-   <header>
-    <nav>
-        <ul>
-            <li><a href="/html_basic/tweets.html">About</a></li>
-        </ul>
-    </nav>
-</header>
-<main>
-    <article>
-        <!-- Your content goes here -->
-        <p>This is your main content: texts, images, tweets, etc.</p>
-        <a href="/html_basic/index.html"><img src="https://i.ibb.co/gTDZZT8/ALX-Logo-07.png" alt="Alx logo-07"></a>
-    
-    <h1>Level 1</h1>
-    <p>This Level 1</p>
-    <h2>Level 2</h2>
-    <p>This is Level 2</p>
-    <h2>Level 3</h2>
-    <p>This is Level 3</p>
-    <h3>Level 4</h3>
-    <p>This is Level 4</p>
+  <aside>
+    <p>🗨️ Comment thread placeholder (coming soon!)</p>
+  </aside>
 
-    <a href="/html_basic/tweets.html" target="_blank">View Tweet</a>
-
-   <table>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Age</th>
-            <th>Country</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>John</td>
-            <td>25</td>
-            <td>USA</td>
-        </tr>
-        <tr>
-            <td>Emily</td>
-            <td>28</td>
-            <td>Canada</td>
-        </tr>
-        <tr>
-            <td>Micheal</td>
-            <td>32</td>
-            <td>Australia</td>
-        </tr>
-        <tr>
-            <td>Sophia</td>
-            <td>21</td>
-            <td>UK</td>
-        </tr>
-    </tbody>
-</table>
-
-    </article>
-    <aside>
-        <p>placeholder to add comment thread later</p>
-    </aside>
-</main>
-<footer><p>Made by Atanda Nafiu - <a href="https://github.com/0xatanda" target="_blank">here</a>.</p></footer>
+  <footer>
+    <p>
+      Made by Atanda Nafiu –
+      <a href="https://github.com/0xatanda" target="_blank">GitHub</a>
+    </p>
+  </footer>
 </body>
 </html>
