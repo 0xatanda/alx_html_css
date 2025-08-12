@@ -1,0 +1,258 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff;
+    background: #0b1523;
+    line-height: 1.6;
+}
+
+header {
+    background: url('/headphones/images/headphones_hero_1.jpg') center/cover no-repeat;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* NAVIGATION */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin: 0 1rem;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    opacity: 0.7;
+}
+
+/* HAMBURGER ICON */
+.hamburger {
+    display: none;
+    width: 30px;
+    height: 22px;
+    position: relative;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.hamburger::before,
+.hamburger::after,
+.hamburger div {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background: white;
+    left: 0;
+    transition: all 0.3s ease;
+}
+
+.hamburger div {
+    top: 9px;
+}
+
+.hamburger::before {
+    top: 0;
+}
+
+.hamburger::after {
+    bottom: 0;
+}
+
+.hamburger.open::before {
+    transform: rotate(45deg);
+    top: 9px;
+}
+
+.hamburger.open::after {
+    transform: rotate(-45deg);
+    bottom: 9px;
+}
+
+.hamburger.open div {
+    opacity: 0;
+}
+
+/* HERO */
+.hero {
+    text-align: center;
+    animation: fadeInUp 1.5s ease-out;
+}
+
+.btn {
+    display: inline-block;
+    background: #ff4c4c;
+    padding: 0.7rem 1.5rem;
+    border-radius: 30px;
+    color: white;
+    text-decoration: none;
+    margin-top: 1rem;
+    transition: transform 0.3s;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+}
+
+/* WHAT WE DO */
+.what-section {
+    text-align: center;
+    padding: 3rem 1rem;
+}
+
+.icon {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.icon-box {
+    width: 200px;
+    margin: 1rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    animation: bounceIn 1.5s;
+}
+
+/* OUR RESULTS */
+.results-section {
+    background: #0e1c2f;
+    text-align: center;
+    padding: 3rem 1rem;
+}
+
+.pentagons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.pentagon {
+    width: 100px;
+    height: 100px;
+    background: #ff4c4c;
+    clip-path: polygon(50% 0%, 95% 35%, 77% 90%, 23% 90%, 5% 35%);
+    margin: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    animation: rotateIn 2s;
+}
+
+/* CONTACT */
+.contact-section {
+    text-align: center;
+    padding: 3rem 1rem;
+}
+
+.contact-section form {
+    max-width: 400px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-section input, 
+.contact-section textarea {
+    margin: 0.5rem 0;
+    padding: 0.7rem;
+    border: none;
+    border-radius: 5px;
+}
+
+/* FOOTER */
+footer {
+    background: #0b1523;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer-left {
+    display: flex;
+    align-items: center;
+}
+
+.logo-footer {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.social-media img {
+    width: 24px;
+    height: 24px;
+    margin: 0 0.5rem;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.social-media img:hover {
+    transform: scale(1.2);
+    opacity: 0.8;
+}
+
+/* ANIMATIONS */
+@keyframes fadeInUp {
+  from {opacity: 0; transform: translateY(20px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+@keyframes bounceIn {
+  0% {transform: scale(0.5);}
+  50% {transform: scale(1.2);}
+  100% {transform: scale(1);}
+}
+
+@keyframes rotateIn {
+  from {transform: rotate(-180deg); opacity: 0;}
+  to {transform: rotate(0); opacity: 1;}
+}
+
+/* MOBILE MENU */
+@media screen and (max-width: 480px) {
+    .nav-links {
+        flex-direction: column;
+        background: #0b1523;
+        position: absolute;
+        top: 60px;
+        right: -220px;
+        width: 200px;
+        padding: 1rem;
+        transition: right 0.3s ease-in-out;
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .hamburger {
+        display: block;
+    }
+}
