@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Items Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    #list-container {
+      margin-top: 10px;
+      padding-left: 20px;
+    }
+    li {
+      margin: 4px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Item List</h1>
+  <input type="text" id="input-text" placeholder="Enter an item">
+  <button id="add-button">Add</button>
+
+  <ul id="list-container"></ul>
+
+  <script>
+    // Event listener for the "Add" button
+    document.getElementById('add-button').addEventListener('click', addItem);
+
+    function addItem() {
+      const input = document.getElementById('input-text');
+      const inputValue = input.value.trim(); 
+
+      if (inputValue !== '') {
+        const listItem = document.createElement('li'); 
+        listItem.textContent = inputValue; 
+
+        document.getElementById('list-container').appendChild(listItem); 
+
+        input.value = '';
+      }
+    }
+  </script>
+
+</body>
+</html>

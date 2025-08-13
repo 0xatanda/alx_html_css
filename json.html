@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Favorite Quotes</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    input, button {
+      padding: 10px;
+      margin: 5px 0;
+      width: 100%;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background: #28a745;
+      color: white;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #218838;
+    }
+    .quote-list {
+      margin-top: 20px;
+    }
+    .quote-item {
+      padding: 10px;
+      margin-bottom: 10px;
+      background: #f9f9f9;
+      border-left: 4px solid #28a745;
+      position: relative;
+    }
+    .remove-btn {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      background: #dc3545;
+      border: none;
+      padding: 5px 10px;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .remove-btn:hover {
+      background: #c82333;
+    }
+    .author {
+      font-style: italic;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Favorite Quotes</h1>
+  <input type="text" id="quote" placeholder="Enter your quote">
+  <input type="text" id="author" placeholder="Enter author's name">
+  <button id="add-quote">Add Quote</button>
+
+  <div class="quote-list" id="quote-list"></div>
+</div>
+
+<script>
+  const quoteInput = document.getElementById('quote');
+  const authorInput = document.getElementById('author');
+  const addQuoteBtn = document.getElementById('add-quote');
+  const quoteList = document.getElementById('quote-list');
+
+  // Load stored quotes when the page loads
+  document.addEventListener('DOMContentLoaded', displayQuotes);
+
+  // Add new quote
+  addQuoteBtn.addEventListener('click', () => {
+    const quoteText = quoteInput.value.trim();
+    const authorText = authorInput.value.trim();
+
+    if (quoteText && authorText) {
+      const quoteObj = {
+        text: quoteText,
+        author: authorText
+      };
+
+      const key = `quote_${Date.now()}`;
+      localStorage.setItem(key, JSON.stringify(quoteObj));
+
+      quoteInput.value = '';
+      authorInput.value = '';
+      displayQuotes();
+    } else {
+      alert('Please enter both a quote and an author.');
+    }
+  });
+
+  // Display all stored quotes
+  function displayQuotes() {
+    quoteList.innerHTML = '';
+    for (let i = 0; i < localStorage.length; i++) {
+      const key = localStorage.key(i);
+      if (key.startsWith('quote_')) {
+        const quoteObj = JSON.parse(localStorage.getItem(key));
+        const quoteDiv = document.createElement('div');
+        quoteDiv.className = 'quote-item';
+        quoteDiv.innerHTML = `
+          <p>"${quoteObj.text}"</p>
+          <p class="author">- ${quoteObj.author}</p>
+          <button class="remove-btn" data-key="${key}">Remove</button>
+        `;
+        quoteList.appendChild(quoteDiv);
+      }
+    }
+
+    // Attach event listeners to remove buttons
+    document.querySelectorAll('.remove-btn').forEach(button => {
+      button.addEventListener('click', removeQuote);
+    });
+  }
+
+  // Remove quote
+  function removeQuote(e) {
+    const key = e.target.getAttribute('data-key');
+    localStorage.removeItem(key);
+    displayQuotes();
+  }
+</script>
+
+</body>
+</html>
